@@ -11,6 +11,7 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 //Setup handlebars and views location
 const app = express()
+const port = process.env.PORT || 3000
 app.set('view engine','hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
@@ -108,6 +109,6 @@ res.render('404', {
 })
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port)
 })//Comando importante para iniciar la aplicacion 
